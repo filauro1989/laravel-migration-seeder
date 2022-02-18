@@ -14,7 +14,6 @@
         <h3>Codice Treno: {{ $train->codice_treno }}</h3>
         <h1>{{ $train->numero_carrozze }}</h1>
         <h1>{{ $train->data }}</h1>
-
     </div>
     @endforeach
 @endsection
