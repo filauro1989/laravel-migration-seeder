@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Train;
 use Illuminate\Http\Request;
 
@@ -9,7 +10,8 @@ class TrainController extends Controller
 {
     public function index() {
 
-        $trains = Train::where('data', '18/02/2022')
+        $date = Carbon::today();
+        $trains = Train::where('data', '>=', $date->toDateString())
         ->get();
         // $trains = Train::all();
 
