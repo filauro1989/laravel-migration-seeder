@@ -10,8 +10,8 @@ class TrainController extends Controller
 {
     public function index() {
 
-        $date = Carbon::today();
-        $trains = Train::where('data', '>=', $date->toDateString())
+        $todayDate = Carbon::today();
+        $trains = Train::where('data', '>=', $todayDate->toDateString())
         ->get();
         // $trains = Train::all();
 
