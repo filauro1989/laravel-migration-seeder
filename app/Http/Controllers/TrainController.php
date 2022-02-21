@@ -11,8 +11,7 @@ class TrainController extends Controller
     public function index() {
 
         $todayDate = Carbon::today();
-        $trains = Train::where('data', '>=', $todayDate->toDateString())
-        ->get();
+        $trains = Train::paginate(12);
         // $trains = Train::all();
 
         $data = ['trains' => $trains];
