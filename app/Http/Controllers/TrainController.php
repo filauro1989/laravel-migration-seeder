@@ -19,4 +19,8 @@ class TrainController extends Controller
 
         return view('home', $data);
     }
+
+    public function show(Train $train){
+        return view('show', compact('train'));
+    }
 }
